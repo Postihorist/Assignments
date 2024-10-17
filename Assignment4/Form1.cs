@@ -23,6 +23,7 @@ namespace Assignment4
             }
             if (decimal.TryParse(textBox1.Text, out n))
             {
+                n = Math.Abs(n);
                 if (n >= 28)
                 {
                     MessageBox.Show("The value overflows the methaphysical limits of the universe. Use calculator instead.");
