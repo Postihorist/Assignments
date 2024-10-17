@@ -23,12 +23,19 @@ namespace Assignment4
             }
             if (decimal.TryParse(textBox1.Text, out n))
             {
-                for (decimal i = 1; i <= n; i++)
+                if (n >= 28)
                 {
-                    f *= i;
-                    textBox2.AppendText($"Iteration: {f}\r\n");
+                    MessageBox.Show("The value overflows the methaphysical limits of the universe. Use calculator instead.");
+                } else
+                {
+                    textBox2.AppendText($"{n}! = ");
+                    for (decimal i = 1; i <= n; i++)
+                    {
+                        f *= i;
+                        textBox2.AppendText(i < n ? $"{i} * " : $"{i}");
+                    }
+                    MessageBox.Show($"The Factorial for {n} is: {f}");
                 }
-                textBox2.AppendText($"Result: {f}\r\n");
             }
             else
             {
