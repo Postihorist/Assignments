@@ -51,7 +51,6 @@ public class MainJunitTest {
 
     public class Triangle {
         public static String checkTriangleType(int a, int b, int c) {
-            // Condition 1: Check if a, b, and c are in the range [1, 200]
             if (a < 1 || a > 200) {
                 return "Value of a is not in the range of permitted values.";
             }
@@ -61,13 +60,9 @@ public class MainJunitTest {
             if (c < 1 || c > 200) {
                 return "Value of c is not in the range of permitted values.";
             }
-
-            // Condition 2: Check if the triangle inequality holds
             if (a >= b + c || b >= a + c || c >= a + b) {
                 return "NotATriangle";
             }
-
-            // Determine the type of triangle
             if (a == b && b == c) {
                 return "Equilateral";
             } else if (a == b || b == c || a == c) {
